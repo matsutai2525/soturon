@@ -1,0 +1,133 @@
+% !TEX encoding = UTF-8 Unicode
+
+\documentclass[12pt,a4j,titlepage]{ltjsarticle}
+\usepackage{luatexja}
+\usepackage{semi}
+\usepackage{here}
+\usepackage{enumerate}
+\usepackage{comment}
+\usepackage{listings}
+\usepackage{graphicx, color}
+\graphicspath{{Figures/}}
+
+\definecolor{myComment}{rgb}{0.0, 0.6, 0.0}       % コメントスタイル用の色設定
+\definecolor{myKeyWord}{cmyk}{1.0, 0.0, 0.0, 0.3} % キーワードスタイル用の色設定
+\definecolor{myString}{cmyk}{0.0, 1.0, 0.0, 0.0}  % 文字列スタイル用の色設定
+ 
+% テキスト用（デフォルト）
+\lstdefinestyle{customText}{
+    backgroundcolor  = {\color{white}},               % 背景色
+    basicstyle       = {\footnotesize},               % コードの基本書式
+    breaklines       = {true},                        % 途中で改行するかどうか
+    commentstyle     = {\slshape  \color{myComment}}, % コメントのスタイル
+    frame            = {shadowbox},                   % フレームの書式
+    framesep         = {4pt},                         % ステップ幅
+    keywordstyle     = {\bfseries \color{myKeyWord}}, % キーワードのスタイル
+    lineskip         = {-0.5ex},                      % 行送り
+    numbers          = {left},                        % 行番号の位置
+    numberstyle      = {\footnotesize},               % 行番号のスタイル
+    numbersep        = {1\zw},                         % コードから行番号までの距離
+    showstringspaces = {false},                       % 文字列中における半角スペースの表示の有無
+    sensitive        = {true},                        % 忘れた
+    stepnumber       = {1},                           % 行番号のステップ幅
+    stringstyle      = { \color{myString}},  % 文字書式のスタイル
+    tabsize          = {2},                           % タブ幅
+    xleftmargin      = {2\zw},                         % 左側の余白
+    xrightmargin     = {2\zw}                          % 右側の余白
+}
+% C 言語用
+\lstdefinestyle{customC}{
+    language         = {C},
+    style            = {customText},
+    morecomment      = [l]{//},                       % 行コメント
+    morecomment      = [s]{/*}{*/},                   % 複数行コメント
+    morecomment      = [n]{/*}{*/},                   % ネスト可能な複数行コメント
+    morestring       = [b]{"}
+}
+% Python3用
+\lstdefinestyle{customPy}{
+    language         = {Python},
+    style            = {customText},
+    morecomment      = [l]{//},                       % 行コメント
+    % morecomment      = [s]{"""}{"""},                   % 複数行コメント
+    % morecomment      = [s]{'''}{'''},                   % 複数行コメント
+    % morecomment      = [n]{"""}{"""},                 % ネスト可能な複数行コメント
+    % morecomment      = [n]{'''}{'''},                 % ネスト可能な複数行コメント
+    morestring       = [b]{"}
+    morestring       = [b]{'}
+}
+\lstdefinestyle{customCpp}{
+    language         = {C++},
+    style            = {customText},
+    morecomment      = [l]{//},                       % 行コメント
+    morecomment      = [s]{/*}{*/},                   % 複数行コメント
+    morecomment      = [n]{/*}{*/},                   % ネスト可能な複数行コメント
+    morestring       = [b]{"}
+}
+\lstdefinestyle{customJava}{
+    language         = {Java},
+    style            = {customText},
+    morecomment      = [l]{//},                       % 行コメント
+    morestring       = [b]{"}
+}
+\lstset{escapechar = , style = {customText}}
+\newcommand{\includeCode}[3][C]{\lstinputlisting[caption = {#3}, label = {src:#3}, escapechar = , style = custom#1]{#2}}
+
+% 表紙 形式不明
+
+\pagestyle{plain}
+
+\begin{document}
+\begin{titlepage}
+    \begin{center}
+    
+        \vspace*{20truept}
+
+        {\LARGE 2023年度  卒業論文}
+
+        \vspace*{75truept}
+
+        {\Huge 音響プロジェクターのための}
+        \vspace{10truept}
+        
+        {\Huge 音場測定} 
+
+        \vspace{85truept}
+
+        {\LARGE 指導教員　須田 宇宙 准教授}
+
+        \vspace{60truept}
+
+        {\LARGE 千葉工業大学 情報ネットワーク学科}
+
+        \vspace{15truept}
+
+        {\LARGE 須田研究室}
+
+        \vspace{70truept}
+
+        {\LARGE 2032137　　氏名　松村 泰河}
+        
+        \vspace{70truept}
+        
+    \end{center}
+    \begin{flushright}
+    
+        {\LARGE 提出日　2022年1月16日}
+        
+    \end{flushright}
+\end{titlepage}
+
+\setcounter{tocdepth}{3}
+\tableofcontents
+\clearpage
+
+\section*{謝辞}
+\addcontentsline{toc}{section}{謝辞}
+本論文の執筆にあたりご指導くださった須田先生に感謝申し上げます. 
+また, 研究室のメンバーには研究についての多くの指摘やアドバイスを頂きました. 
+本当にありがとうございました. 
+\clearpage
+
+
+\end{document}

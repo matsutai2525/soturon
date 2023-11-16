@@ -1,0 +1,73 @@
+\contentsline {section}{\numberline {1}はじめに}{4}{section.1}%
+\contentsline {section}{\numberline {2}関連研究}{5}{section.2}%
+\contentsline {subsection}{\numberline {2.1}アルゴリズムの学習支援}{5}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}ソースコードを用いる学習支援}{5}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}ソースコードを用いない学習支援}{5}{subsubsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.2}オンラインジャッジシステムの活用}{6}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}オンラインジャッジシステムとは}{6}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}講義における活用}{6}{subsubsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.3}問題点}{6}{subsection.2.3}%
+\contentsline {section}{\numberline {3}実際のオンラインジャッジシステムの活用例}{7}{section.3}%
+\contentsline {subsection}{\numberline {3.1}AtCoderとは}{7}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}競技プログラミングとは}{7}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}AtCoderのコンテスト}{7}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}AtCoderにおけるオンラインジャッジシステムの利用}{8}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}オンラインジャッジシステムによる実行例}{9}{subsection.3.5}%
+\contentsline {section}{\numberline {4}アルゴリズム学習教材について}{14}{section.4}%
+\contentsline {subsection}{\numberline {4.1}プログラミングを含まない学習教材}{14}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}プログラミングを含む学習教材}{14}{subsection.4.2}%
+\contentsline {section}{\numberline {5}作成した教材について}{15}{section.5}%
+\contentsline {subsection}{\numberline {5.1}対象とする学習者}{15}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}目的とする利用方法}{15}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}到達目標}{15}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}題材としたアルゴリズム}{16}{subsection.5.4}%
+\contentsline {subsubsection}{\numberline {5.4.1}動的計画法とは}{16}{subsubsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.5}利用環境}{16}{subsection.5.5}%
+\contentsline {subsubsection}{\numberline {5.5.1}TechFULとは}{16}{subsubsection.5.5.1}%
+\contentsline {subsection}{\numberline {5.6}利用する言語}{17}{subsection.5.6}%
+\contentsline {subsection}{\numberline {5.7}教材の構成}{18}{subsection.5.7}%
+\contentsline {subsubsection}{\numberline {5.7.1}導入 動的計画法とは}{18}{subsubsection.5.7.1}%
+\contentsline {subsubsection}{\numberline {5.7.2}1章 動的計画法の考え方}{19}{subsubsection.5.7.2}%
+\contentsline {subsubsection}{\numberline {5.7.3}2章 数式をプログラミングする}{20}{subsubsection.5.7.3}%
+\contentsline {subsection}{\numberline {5.8}実際の運用形式}{20}{subsection.5.8}%
+\contentsline {subsubsection}{\numberline {5.8.1}C言語版セクション}{21}{subsubsection.5.8.1}%
+\contentsline {subsubsection}{\numberline {5.8.2}他言語版セクション}{22}{subsubsection.5.8.2}%
+\contentsline {section}{\numberline {6}おわりに}{24}{section.6}%
+\contentsline {section}{謝辞}{25}{section*.2}%
+\contentsline {section}{\numberline {付録A}作成した教材}{27}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}動的計画法とは}{27}{subsection.A.1}%
+\contentsline {subsection}{\numberline {A.2}動的計画法の考え方}{28}{subsection.A.2}%
+\contentsline {subsubsection}{\numberline {A.2.1}導入 例題(線形探索問題)の紹介}{28}{subsubsection.A.2.1}%
+\contentsline {subsubsection}{\numberline {A.2.2}部分問題に分ける}{30}{subsubsection.A.2.2}%
+\contentsline {subsubsection}{\numberline {A.2.3}2数の比較}{31}{subsubsection.A.2.3}%
+\contentsline {subsubsection}{\numberline {A.2.4}問題の解説}{32}{subsubsection.A.2.4}%
+\contentsline {subsubsection}{\numberline {A.2.5}Gistの解答例}{33}{subsubsection.A.2.5}%
+\contentsline {subsubsection}{\numberline {A.2.6}計算結果をメモする}{34}{subsubsection.A.2.6}%
+\contentsline {subsubsection}{\numberline {A.2.7}問題を解く}{36}{subsubsection.A.2.7}%
+\contentsline {subsubsection}{\numberline {A.2.8}数列内の最大の数の出力}{38}{subsubsection.A.2.8}%
+\contentsline {subsubsection}{\numberline {A.2.9}問題の解説}{39}{subsubsection.A.2.9}%
+\contentsline {subsubsection}{\numberline {A.2.10}Gistの解答例}{41}{subsubsection.A.2.10}%
+\contentsline {subsubsection}{\numberline {A.2.11}計算結果をメモする意味}{43}{subsubsection.A.2.11}%
+\contentsline {subsection}{\numberline {A.3}数式をプログラミングする}{45}{subsection.A.3}%
+\contentsline {subsubsection}{\numberline {A.3.1}導入 例題(フィボナッチ数列)の紹介}{45}{subsubsection.A.3.1}%
+\contentsline {subsubsection}{\numberline {A.3.2}計算量を考える}{46}{subsubsection.A.3.2}%
+\contentsline {subsubsection}{\numberline {A.3.3}漸化式をプログラミングする}{49}{subsubsection.A.3.3}%
+\contentsline {subsubsection}{\numberline {A.3.4}フィボナッチ数列}{50}{subsubsection.A.3.4}%
+\contentsline {subsubsection}{\numberline {A.3.5}問題の解説}{51}{subsubsection.A.3.5}%
+\contentsline {subsubsection}{\numberline {A.3.6}Gistの解答例}{53}{subsubsection.A.3.6}%
+\contentsline {subsubsection}{\numberline {A.3.7}トリボナッチ数列}{55}{subsubsection.A.3.7}%
+\contentsline {subsubsection}{\numberline {A.3.8}問題の解説}{56}{subsubsection.A.3.8}%
+\contentsline {subsubsection}{\numberline {A.3.9}Gistの解答例}{57}{subsubsection.A.3.9}%
+\contentsline {section}{\numberline {付録B}C言語版セッションで追加した項目}{58}{appendix.B}%
+\contentsline {subsection}{\numberline {B.1}はじめに}{58}{subsection.B.1}%
+\contentsline {subsection}{\numberline {B.2}C言語入出力チートシート}{61}{subsection.B.2}%
+\contentsline {subsection}{\numberline {B.3}大きい数 初期プログラム}{64}{subsection.B.3}%
+\contentsline {subsection}{\numberline {B.4}最大の数 初期プログラム}{64}{subsection.B.4}%
+\contentsline {subsection}{\numberline {B.5}フィボナッチ数列 初期プログラム}{65}{subsection.B.5}%
+\contentsline {subsection}{\numberline {B.6}トリボナッチ数列 初期プログラム}{65}{subsection.B.6}%
+\contentsline {subsection}{\numberline {B.7}さいごに}{66}{subsection.B.7}%
+\contentsline {section}{\numberline {付録C}TechFULで教材を表示した場合の例}{68}{appendix.C}%
+\contentsline {subsection}{\numberline {C.1}セクションを利用した際のイメージ}{68}{subsection.C.1}%
+\contentsline {subsection}{\numberline {C.2}教材と問題のイメージ}{69}{subsection.C.2}%
+\contentsline {subsection}{\numberline {C.3}コードテストを行った時のイメージ}{71}{subsection.C.3}%
+\contentsline {subsection}{\numberline {C.4}正誤判定を行った際のイメージ}{74}{subsection.C.4}%

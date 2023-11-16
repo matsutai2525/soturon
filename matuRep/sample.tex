@@ -1,0 +1,435 @@
+% !TEX encoding = UTF-8 Unicode
+
+\documentclass[a4j,10pt]{jsarticle}
+
+\usepackage{newtxtext} % アルファベットなどをTimesNewRomanで
+%\usepackage{newpxtext} % アルファベットなどをPalatinoで
+% 両方共コメントアウトするとComputer Modernで
+
+\usepackage{okumacro} %奥村先生による様々な便利機能
+\usepackage{graphicx}
+%\usepackage{url} %でき上がったPDFファイルからのリンク機能を有効にする・・・はず
+%\usepackage{array}
+\usepackage{tabularx} %2段組などで使う・・・はず
+\usepackage{colortbl} %なんだっけ？
+%\usepackage{float}
+%\usepackage{makeidx} %目次を作ってくれる（ただしjsarticle用？）
+%\makeindex
+\usepackage{fouriernc}
+\usepackage[deluxe]{otf} %日本語の太字をきちんと太字で表す
+\usepackage{mediabb} %PDFファイルからサイズを自動取得する
+\usepackage{amsmath} %数式を，業界標準にする
+\usepackage{moreverb} %ソースコードを引用する際に使う
+%\usepackage{verbatim} %ソースコードを引用する際に使う（普段は上の行のを使う）
+\usepackage[margin=2cm]{geometry} %上下左右の余白設定
+\usepackage{dcolumn} 
+\usepackage{ascmac}
+%\usepackage{hyperref} %でき上がったPDFファイルからのリンク機能を有効にする・・・はず
+\usepackage{color} %文字の色を変更する場合に使う
+\usepackage{eclbkbox} %複数ページにまたがる箱を使う
+\usepackage{itembkbx} %複数ページにまたがるソースコードを引用する際に使う
+\usepackage{enumerate} %箇条書きを装飾する際に使う
+
+\renewcommand{\headfont}{\bfseries} %見出しの英数字をゴシックにしない
+
+\begin{document}
+\begin{flushright}
+2016年4月22日 %日付
+
+須田\ 宇宙 %製作者
+\end{flushright}
+
+\begin{center}
+\textbf{ \LARGE{\TeX の使い方} }
+\end{center}
+
+\tableofcontents
+
+\section{はじめに}
+\label{sec:introductino}
+この文章は，研究室のゼミでの報告書を，\TeX を使って作成するためのひな形です．
+とりあえず使えるようになるため，要点を絞ってサンプルを掲載します．
+目次が付いていますが，ゼミでの報告書には目次は不要です．
+
+まずは以下のコマンドを使って，自分のコンピュータにこのファイルと関連ファイルを取り込みましょう．
+
+\textsf{\$ git clone http://git.mesh.cx/gitbucket/git/suda/semi.git}
+
+\section{ \TeX とは？}
+\label{sec:tex}
+\TeX は，文章を作成する際に使用するソフトウェアとファイルフォーマットの総称です．
+HTMLなどと同じように，特定のルールにしたがってマークアップ（HTMLでいうタグ）を含んだ文章を記述し，そのファイルをコンパイルすることで，見栄えのする文章が出力されます．
+出力ファイルの型式として，古くはDVIという型式やPostScript型式がよく使われてきましたが，昨今ではPDFを使用することが多いです．
+
+ワープロソフトと比較して，無料である，数式に強い，殆どのコンピュータで使用できることなどが特徴です．
+しかも，記述するファイルはテキストファイルなので，普段親しんでいるテキストエディタを使用できますし，軽量です．
+また，テキストファイルなのでバージョン管理ツールとの相性も抜群です．
+
+元々，クヌースさんという方が，自分の書いた本の仕上がりに満足できずに作成したソフトウェアなので，レイアウトや数式に関しては抜群の美しさを誇ります．
+反面，記述ルールを覚えるまでが面倒なのと，ルールに則っていないとエラーが表示され肝心の出力ファイルを得られません．
+本研究室では，ちょっとした文章から卒業研究の梗概，論文などの記述まで幅広く使っていきます．
+
+\newpage %改ページ
+
+\section{基本的な使い方}
+\label{sec:usage}
+\subsection{\TeX のサンプル}
+\label{sec:sample}
+\TeX のサンプルを見てみましょう．
+拡張子は「.tex」です．
+
+\begin{itembox}[c]{hello.tex}
+\begin{verbatim}
+\documentclass[a4j,10pt]{jsarticle}
+\begin{document}
+こんにちは世界
+\end{document}
+\end{verbatim}
+\end{itembox}
+
+1行目では，これから作成する文章の型式を指定しています．
+具体的には，用紙サイズがA4で，文字サイズが10ポイント，最後の「jsarticle」で日本語の一般的な文章であることを示しています．
+jsarticle以外には，論文などの長い文章を記述するjsbookがあります．
+
+
+\TeX では，段落の区切りを表すために，文章と文章の間を一行開けてください．
+通常の改行は無視されます．
+通常は，文章は1行毎に改行しておいた方が，後で編集しやすいです．
+
+\subsection{\TeX の環境}
+通常，\TeX を使用する際にはテキストエディタとコンパイラ\footnote{コンパイラはさまざまな種類のものが存在します}を使いますが，直感的でないので最初は難しいと感じるはずです．
+そこで，本研究室ではTeXShopを標準の\TeX 環境として利用します．
+また，複雑な数式を記述する際にはLaTeXiTを使用します．
+
+TeXShopを起動すると「名称未設定-1」と書かれたウィンドウが出現します．
+上の方に並んでいるボタンは，後で使用します．
+まずは，ボタンの下の白い部分に\ref{sec:sample}で紹介したhello.texを入力してみましょう．
+入力後に「タイプセット」ボタンを押すと，コンパイルが始まります．
+もし，ファイル名を付けていなければ保存のためのダイアログが表示されるので，今回は先ほどダウンロードしたsemiディレクトリに好きな名前で保存してください．
+すると，コンパイルが実行され，入力ミスがなければ出力結果が画面に表示されるはずです．
+
+エラーの場合はconsoleウィンドウが表示され，エラーの発生した行番号と内容が表示されるので，ソースコードを修正してください．
+稀に，文章構造に関わる致命的なエラーが起きた場合は，きちんと修正して再度タイプセットを実行しても，いつまでたってもエラーのままの場合があります．
+その場合，consoleの「作業ファイルを削除」をクリックすると治る場合があります．
+
+\subsection{機能を拡張する}
+\TeX では，複雑な記述をまとめるためにマクロと呼ばれる機能があります．
+プログラム言語で言うメソッドのようなものと思ってください．
+そして，マクロを機能ごとにまとめたパッケージ（またはマクロファイル）が，あちこちで配布されています．
+この文章のソースコードを読み，どんなパッケージが使用されているか調べてみましょう．
+
+パッケージを使うためには以下のように\symbol{"5C}usepackageを，\symbol{"5C}documentclassから\symbol{"5C}begin{document}の間に記述します．
+ただし，標準的なパッケージは自動的に参照されますが，標準ではないパッケージを入手した場合は，texファイルと同じディレクトリに置くようにしてください．
+
+余談ですが，\%はコメントを表す記号です．
+
+\begin{itembox}[c]{hello.tex}
+\begin{verbatim}
+\documentclass[a4j,10pt]{jsarticle}
+
+\usepackage{okumacro} %奥村先生による様々な便利機能
+\usepackage[deluxe]{otf} %日本語の太字をきちんと太字で表す
+\usepackage{graphicx} %図を貼り付ける際に使う．mediabbを使う場合は必須
+\usepackage{mediabb} %PDFファイルからサイズを自動取得する
+\usepackage{amsmath} %数式を，業界標準にする
+\usepackage{enumerate} %箇条書きを装飾する際に使う
+
+\begin{document}
+こんにちは世界
+\end{document}
+\end{verbatim}
+\end{itembox}
+
+\subsection{章・節・項について}
+\label{sec:sectoin}
+章は\texttt{\symbol{"5C}}sectionコマンドで，節は\texttt{\symbol{"5C}}subsectionコマンドで，項は\texttt{\symbol{"5C}}subsubsectionコマンドで割り振ります．
+通常，章・節・図・式・表は，参照するための識別子を付加するため，\texttt{\symbol{"5C}}labelコマンドと併用します．
+それぞれのコマンドの下にラベルを付けておいてください．
+以下に，具体的な例を示します．
+
+\begin{itembox}[c]{章・節・項}
+\begin{verbatim}
+\sectoin{説明}
+\label{sec:description}
+\subsection{章・節・項について}
+\label{sec:section}
+本文・・・
+\end{verbatim}
+\end{itembox}
+
+この内容が含まれた文章を作成すると，以下のように出力されます．
+
+\begin{itembox}[c]{章・節・項の出力例}
+\begin{verbatim}
+1 説明
+1.1 章・節・項について
+本文・・・
+\end{verbatim}
+\end{itembox}
+
+なお，章番号などは，\TeX が割り振ってくれます．
+これにより，文章作成中に「この節は章として独立させよう」となった場合でも，ユーザは特に章番号を操作する必要はありません．
+また，文章を書いていると，「1章に記したように」などと書くことがあります．
+ここで，章番号を手書きしていると，後々大きくずれて泣きながら訂正するはめに陥る場合があります．
+しかし，\TeX では先に述べたlabelを使用することで，自動的に番号を合わせてくれます．
+
+その場合，ref（reference：参照）を使用します．
+例では章番号を参照していますが，図でも表でも利用できます．
+
+\begin{itembox}[c]{参照}
+\begin{verbatim}
+\ref{sec:description}に書いたように・・・
+\end{verbatim}
+\end{itembox}
+
+なお，\TeX は，コンパイル時にコンパイルしてからlabel情報を作り直します．
+これは，とりあえずコンパイルしないと，図番号やページ番号が確定しないためです．
+コンパイルした時には1回前のlabel情報が使用されているので，参照の状態をチェックしたい場合は続けて2回コンパイルしてみてください．
+特に，初回コンパイル時には章番号や目次内のページ番号が一切表示されなくて焦ることがあります．
+
+\subsection{空白について}
+スペースを空けようとしても，空けさせてくれない場合があります．
+そのために，スペースを空けるコマンドが用意されています\footnote{この例は，見出し付き箇条書きの例でもあります}．
+\begin{description}
+\item[縦のスペース] \texttt{\symbol{"5C}}vspace\{ <空ける量> \}
+\item[横のスペース] \texttt{\symbol{"5C}}hspace\{ <空ける量> \}
+\end{description}
+
+空ける量については，表\ref{tab:unit}のように単位が定められています．
+よって，\texttt{\symbol{"5C}}hspace\{ 1zw \}などと入力すれば，全角1文字分空けてくれます．
+\begin{table}[h]
+
+\caption{空白の種類}
+\begin{center}
+\label{tab:unit} %表番号を本文から利用する場合に使います．とりあえず全ての表などに付けておきましょう．
+\begin{tabular}{ll} %llは「左詰め，左詰め」の意味です．項目が増えたらここも増やしましょう．なお，左詰め=l，中央揃え=c，右づめ=rです．
+\hline %罫線が必要な場合は，このコマンドを使う．
+単位 & 意味\\ %　&が項目の区切り．改行だけでは次の行とみなされないので，末尾に\\を付けておく．
+\hline
+cm & センチメートル\\
+mm & ミリメートル\\
+in & インチ\\
+pt & ポイント\\
+em & 大文字のMの幅\\
+ex & 小文字のxの高さ\\
+zw & 全角文字の幅\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+%\newpage %改ページしたい場合はnew pageを使う
+
+\subsection{数式の使い方}
+\label{sec:formula}
+数式は，\TeX の最も得意とする分野です．
+基本はequationコマンドを使って，以下のように記述します．
+
+\begin{itembox}[c]{数式}
+\begin{verbatim}
+\begin{equation}
+y = x ^ 2
+\end{equation}
+\end{verbatim}
+\end{itembox}
+
+すると，以下のように表示されます．
+数式番号は自動的につきます．
+\begin{equation}
+y = x ^ 2
+\end{equation}
+
+また，文中にちょっとした数式を入れたければ，数式本体を\$で囲ってください．
+例えば\$ y=x\textasciicircum 2 \$とした場合，$ y=x^2 $ と表示されます．
+なお，数式コマンドについては省略します．
+慣れないうちは，LaTeXiTを併用してみてください．
+
+\subsection{図の貼付け方}
+図を貼り付ける場合は，PDFかそうでないか（JPEGやPNG）によって手間が異なります．
+本来の\TeX だと，貼り付けようとしている図のピクセル数を与えなければなりません．
+しかし，PDFの場合は内部にピクセル数などのデータを保持しています．
+そのデータを，「mediabb」というマクロファイルが自動的に取得してくれます．
+
+よって，PDFファイルを貼り付けたい場合は，以下のように記述してください．
+includegraphicsコマンドのwidthは紙面上の幅です．
+その次にファイル名を指定します．
+どちらも必ず指定してください．
+
+\begin{itembox}[c]{図}
+\begin{verbatim}
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=12cm]{branch.pdf}
+\caption{プログラムの変更履歴とブランチ}
+\label{fig:branch}
+\end{figure}
+\end{verbatim}
+\end{itembox}
+
+なお，図のみのPDFの作り方ですが，PowerPointなどで図を書き→PDFに変換したい部分を選択→右クリック→「図として保存...」→形式としてPDFを選択するのが楽です．
+もしかしたらMac OS X限定かもしれません．
+\subsection{外部ファイル（ソースコードなど）の貼付け方}
+図の貼り付けと同じような感じですが，以下のようにします\footnote{3行目のendの前にスペースが入っていますが，実際にはスペースは不要です}．
+itemboxは，ファイル全体を角丸四角で囲み，ファイル名を表示します．
+実際のファイル名は，その次のverbatimtabinputで指定します．
+なお，verbatimtabinputの次の数値は，tabを置き換えるスペースの文字数です．
+枠線が必要なければ，itemboxに関する記述は不要です．
+
+\begin{itembox}[c]{図}
+\begin{verbatim}
+\begin{itembox}[c]{Introduction1.java}
+\verbatimtabinput[2]{Introduction1.java}
+\ end{itembox}
+\end{verbatim}
+\end{itembox}
+
+\subsection{箇条書き}
+箇条書きには「記号付き箇条書き」「番号付き箇条書き」「見出し付き箇条書き」の3つが用意されています．
+順番に例を示します．
+当然，項目はいくつあっても構いません．
+
+\subsubsection{記号付き箇条書きの書き方の例}
+\begin{verbatim}
+\begin{itemize}
+\item 1番目の項目
+\item 2番目の項目
+\end{itemize}
+\end{verbatim}
+
+上記による表示例
+\begin{itemize}
+\item 1番目の項目
+\item 2番目の項目
+\end{itemize}
+
+\subsubsection{番号付き箇条書きの書き方の例}
+\begin{verbatim}
+\begin{enumerate}
+\item 1番目の項目
+\item 2番目の項目
+\end{enumerate}
+\end{verbatim}
+
+上記による表示例
+\begin{enumerate}
+\item 1番目の項目
+\item 2番目の項目
+\end{enumerate}
+
+\subsubsection{見出し付き箇条書きの書き方の例}
+\begin{verbatim}
+\begin{description}
+\item[見出し1] 1番目の項目
+\item[見出し2] 2番目の項目
+\end{description}
+\end{verbatim}
+
+上記による表示例
+\begin{description}
+\item[見出し1] 1番目の項目
+\item[見出し2] 2番目の項目
+\end{description}
+
+\subsubsection{itemizeで見出しを付ける書き方の例}
+以下の例では文章を見出しにつけていますが，本来は見出しに記号をつける場合に使います．
+文章見出しを付けたい場合は素直にdescriptionを使いましょう．
+\begin{verbatim}
+\begin{itemize}
+\item[見出し1] 1番目の項目
+\item[見出し2] 2番目の項目
+\end{itemize}
+\end{verbatim}
+
+上記による表示例
+\begin{itemize}
+\item[見出し1] 1番目の項目
+\item[見出し2] 2番目の項目
+\end{itemize}
+
+\subsubsection{括弧を付けた番号付き箇条書きの書き方の例}
+括弧だけでなく好きな装飾を付けられます．
+また，1と書いてあるのは数値を付けることを表します．他にA：大文字アルファベット，a：小文字アルファベット，I：大文字ローマン数字，i：小文字ローマン数字を使えます．
+\begin{verbatim}
+\begin{enumerate}[(1)]
+\item 1番目の項目
+\item 2番目の項目
+\end{enumerate}
+\end{verbatim}
+
+上記による表示例
+\begin{enumerate}[(1)]
+\item 1番目の項目
+\item 2番目の項目
+\end{enumerate}
+
+\subsubsection{行頭のスペースを変更する書き方の例}
+\begin{verbatim}
+\begin{enumerate}[(1)]
+\setlength{\rightskip}{3cm}
+\setlength{\leftskip}{2cm}
+\item 1番目の項目
+\item 2番目の項目
+\end{enumerate}
+\end{verbatim}
+
+上記による表示例
+\begin{enumerate}[(1)]
+\setlength{\rightskip}{3cm}
+\setlength{\leftskip}{2cm}
+\item 1番目の項目
+\item 2番目の項目
+\end{enumerate}
+
+\subsubsection{箇条書き中断後に番号を継続する書き方の例}
+順番に解説すると，setcounterで変数に数値を代入することができます．
+まずは「mynumber」という変数を宣言し，最初の箇条書き終了時に変数「enumi」の値を「mynumber」に代入しておきます．
+この「enumi」という変数ですが，内部的に箇条書き番号を保持するための変数です．
+そして，箇条書き継続後に「mynumber」の値を「enumi」に代入することで，継続しているように見せています．
+\begin{verbatim}
+\newcounter{mynumber}
+\begin{enumerate}[(1)]
+\item 1番目の項目
+\item 2番目の項目
+\setcounter{mynumber}{\value{enumi}}
+\end{enumerate}
+ここで箇条書きを中止して，通常の文章を書きます．
+その後，番号を継続したまま箇条書きを行います．
+\begin{enumerate}[(1)]
+\setcounter{enumi}{\value{mynumber}}
+\item 3番目の項目
+\item 4番目の項目
+\end{enumerate}
+\end{verbatim}
+
+上記による表示例
+\newcounter{mynumber}
+\begin{enumerate}[(1)]
+\item 1番目の項目
+\item 2番目の項目
+\setcounter{mynumber}{\value{enumi}}
+\end{enumerate}
+ここで箇条書きを中止して，通常の文章を書きます．
+その後，番号を継続したまま箇条書きを行います．
+\begin{enumerate}[(1)]
+\setcounter{enumi}{\value{mynumber}}
+\item 3番目の項目
+\item 4番目の項目
+\end{enumerate}
+
+\subsection{書体の変更について}
+\TeX では，システムの定めた書体で出力されます．
+しかし，太字やゴシック体であれば使用できます．
+
+\begin{description}
+\item[ゴシック体を使いたい場合：] \texttt{\symbol{"5C}}textsf\{ゴシック体\}→\textsf{ゴシック体}
+\item[太文字を使いたい場合：] \texttt{\symbol{"5C}}textbf\{太文字\}→\textbf{太文字}
+\item[太いアルファベット：] \texttt{\symbol{"5C}}textsf\{alphabet\}→\textsf{alphabet}
+\item[等幅のアルファベット：] \texttt{\symbol{"5C}}texttt\{alphabet\}→\texttt{alphabet}
+\end{description}
+
+
+
+\end{document}
+
+
+
